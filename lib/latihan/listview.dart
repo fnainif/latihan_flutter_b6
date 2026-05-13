@@ -97,6 +97,28 @@ class ListviewDay10 extends StatelessWidget {
 
           SizedBox(height: 20),
           Container(
+            alignment: Alignment.center,
+            height: 40,
+            width: 300,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(
+                color: const Color.fromARGB(255, 161, 85, 138),
+              ),
+            ),
+            child: Text(
+              "Submit",
+              style: TextStyle(
+                color: const Color.fromARGB(255, 161, 85, 138),
+                fontFamily: "Super",
+                fontSize: 20,
+              ),
+            ),
+          ),
+
+          SizedBox(height: 20),
+          Container(
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 161, 85, 138),
@@ -122,13 +144,26 @@ class ListviewDay10 extends StatelessWidget {
                   itemCount: contacts.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          contacts[index]["pp"]!,
-                          height: 50,
-                          width: 50,
-                          fit: BoxFit.cover,
+                      leading: Container(
+                        padding: EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 255, 203, 238),
+                              Color.fromARGB(255, 204, 203, 255),
+                              Color.fromARGB(255, 203, 255, 207),
+                            ],
+                          ),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.asset(
+                            contacts[index]["pp"]!,
+                            height: 50,
+                            width: 50,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       title: Text(
