@@ -11,11 +11,11 @@ class InputField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
       child: TextField(
-        style: TextStyle(color: Color.fromARGB(150, 217, 217, 217)),
+        style: TextStyle(color: Color(0xFF999999)),
         decoration: InputDecoration(
           prefixIcon: Padding(
             padding: const EdgeInsets.only(bottom: 10.0),
-            child: Icon(icon, color: Color.fromARGB(150, 217, 217, 217)),
+            child: Icon(icon, color: Color(0xFF999999)),
           ),
           hintText: hint,
           hintStyle: TextStyle(color: Color.fromARGB(150, 217, 217, 217)),

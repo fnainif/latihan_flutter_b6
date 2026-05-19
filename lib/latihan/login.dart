@@ -12,7 +12,7 @@ class _LoginDay13State extends State<LoginDay13> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 9, 29, 49),
+      backgroundColor: Color(0xFF011B33),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -66,9 +66,7 @@ class _LoginDay13State extends State<LoginDay13> {
                     padding: EdgeInsets.all(10.0),
                     child: Text(
                       "Forget Password ?",
-                      style: TextStyle(
-                        color: Color.fromARGB(150, 217, 217, 217),
-                      ),
+                      style: TextStyle(color: Color(0xFF999999)),
                     ),
                   ),
 
@@ -76,7 +74,7 @@ class _LoginDay13State extends State<LoginDay13> {
 
                   SocmedButton(
                     sosmed: "Login",
-                    warnaBox: Color.fromARGB(255, 18, 46, 138),
+                    warnaBox: Color(0xFF062592),
                     loginSize: 15,
                   ),
 
@@ -88,7 +86,7 @@ class _LoginDay13State extends State<LoginDay13> {
                       children: [
                         Expanded(
                           child: Divider(
-                            color: const Color.fromARGB(100, 217, 217, 217),
+                            color: Color(0xFF999999),
                             thickness: 2,
                           ),
                         ),
@@ -101,7 +99,7 @@ class _LoginDay13State extends State<LoginDay13> {
                           child: Text(
                             "or",
                             style: TextStyle(
-                              color: const Color.fromARGB(100, 217, 217, 217),
+                              color: Color(0xFF999999),
                               fontSize: 15,
                             ),
                           ),
@@ -109,7 +107,7 @@ class _LoginDay13State extends State<LoginDay13> {
 
                         Expanded(
                           child: Divider(
-                            color: const Color.fromARGB(100, 217, 217, 217),
+                            color: Color(0xFF999999),
                             thickness: 2,
                           ),
                         ),
