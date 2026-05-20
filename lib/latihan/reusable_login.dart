@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_flutter_b6/latihan/loginkosong.dart';
+import 'package:latihan_flutter_b6/latihan/sosmedkosong.dart';
 
 class InputField extends StatelessWidget {
   const InputField({super.key, required this.hint, required this.icon});
@@ -49,6 +51,97 @@ class SocmedButton extends StatelessWidget {
     return TextButton(
       onPressed: () {
         print("menuju $sosmed");
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Sosmedkosong()),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        decoration: BoxDecoration(
+          color: warnaBox,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Text(
+            sosmed,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color.fromARGB(255, 217, 217, 217),
+              fontSize: loginSize,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class LoginButton extends StatelessWidget {
+  const LoginButton({
+    super.key,
+    required this.sosmed,
+    required this.warnaBox,
+    this.loginSize = 16,
+  });
+
+  final String sosmed;
+  final Color warnaBox;
+  final double loginSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        print("menuju homepage");
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Loginkosong()),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        decoration: BoxDecoration(
+          color: warnaBox,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Text(
+            sosmed,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color.fromARGB(255, 217, 217, 217),
+              fontSize: loginSize,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HomeButton extends StatelessWidget {
+  const HomeButton({
+    super.key,
+    required this.sosmed,
+    required this.warnaBox,
+    this.loginSize = 16,
+  });
+
+  final String sosmed;
+  final Color warnaBox;
+  final double loginSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        print("menuju login");
+        Navigator.pop(context);
       },
       child: Container(
         width: double.infinity,

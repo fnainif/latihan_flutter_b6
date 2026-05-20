@@ -72,12 +72,20 @@ class _LoginDay13State extends State<LoginDay13> {
 
                   SizedBox(height: 20),
 
-                  SocmedButton(
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(builder: (context) => Loginkosong()),
+                  //     );
+                  //   },
+                  //   child: Text("Login"),
+                  // ),
+                  LoginButton(
                     sosmed: "Login",
                     warnaBox: Color(0xFF062592),
                     loginSize: 15,
                   ),
-
                   SizedBox(height: 30),
 
                   Padding(
