@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/gridview.dart';
-import 'package:latihan_flutter_b6/latihan/listview.dart';
-import 'package:latihan_flutter_b6/latihan/profile.dart';
-import 'package:latihan_flutter_b6/latihan/scaffold.dart';
-import 'package:latihan_flutter_b6/latihan/kinday.dart';
-import 'package:latihan_flutter_b6/latihan/app.dart';
+import 'package:latihan_flutter_b6/latihan/tugas7_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +33,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 220, 169, 235),
         ),
       ),
-      home: const ListviewDay10(),
+      home: const TugasDay15(),
     );
   }
 }
