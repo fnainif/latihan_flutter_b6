@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:latihan_flutter_b6/latihan/loginkosong.dart';
 import 'package:latihan_flutter_b6/latihan/tugas7_drawer.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_snk.dart';
 
 class TugasDay15 extends StatefulWidget {
   const TugasDay15({super.key, required this.isSwitch});
@@ -15,6 +15,7 @@ class _TugasDay15State extends State<TugasDay15> {
   String? selectedDropdown;
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
+  int selectedIndex = 0;
   @override
   void initState() {
     super.initState();
@@ -157,20 +158,6 @@ class _TugasDay15State extends State<TugasDay15> {
                                   },
                                 ),
                                 SizedBox(width: 20),
-                                Text(
-                                  "Prioritas dipilih : \n${selectedDropdown ?? "-"}",
-                                  style: TextStyle(
-                                    color: isSwitch
-                                        ? Colors.white
-                                        : const Color.fromARGB(
-                                            255,
-                                            196,
-                                            110,
-                                            176,
-                                          ),
-                                    fontSize: 16,
-                                  ),
-                                ),
                               ],
                             ),
 
@@ -223,24 +210,6 @@ class _TugasDay15State extends State<TugasDay15> {
                                   ),
                                 ),
                                 SizedBox(width: 40),
-                                Text(
-                                  "Tanggal dipilih :\n${DateFormat('EEE, dd MMMM yyyy').format(selectedDate ?? DateTime.now())}",
-                                  style: TextStyle(
-                                    color: isSwitch
-                                        ? const Color.fromARGB(
-                                            255,
-                                            243,
-                                            232,
-                                            240,
-                                          )
-                                        : const Color.fromARGB(
-                                            255,
-                                            196,
-                                            110,
-                                            176,
-                                          ),
-                                  ),
-                                ),
                               ],
                             ),
 
@@ -291,26 +260,110 @@ class _TugasDay15State extends State<TugasDay15> {
                                   ),
                                 ),
                                 SizedBox(width: 40),
-                                Text(
-                                  "Pengingat dipilih :\n${selectedTime == null ? "" : selectedTime!.format(context)}",
-                                  style: TextStyle(
-                                    color: isSwitch
-                                        ? const Color.fromARGB(
-                                            255,
-                                            243,
-                                            232,
-                                            240,
-                                          )
-                                        : const Color.fromARGB(
-                                            255,
-                                            196,
-                                            110,
-                                            176,
-                                          ),
-                                  ),
-                                ),
                               ],
                             ),
+
+                            Divider(),
+
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 30,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: isSwitch
+                                    ? const Color.fromARGB(255, 243, 232, 240)
+                                    : const Color.fromARGB(255, 196, 110, 176),
+                              ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Summary",
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      color: isSwitch
+                                          ? const Color.fromARGB(
+                                              255,
+                                              196,
+                                              110,
+                                              176,
+                                            )
+                                          : const Color.fromARGB(
+                                              255,
+                                              243,
+                                              232,
+                                              240,
+                                            ),
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        "Prioritas dipilih : \n${selectedDropdown ?? "-"}",
+                                        style: TextStyle(
+                                          color: isSwitch
+                                              ? const Color.fromARGB(
+                                                  255,
+                                                  196,
+                                                  110,
+                                                  176,
+                                                )
+                                              : const Color.fromARGB(
+                                                  255,
+                                                  243,
+                                                  232,
+                                                  240,
+                                                ),
+                                          fontSize: 16,
+                                        ),
+                                      ),
+
+                                      Text(
+                                        "Tanggal dipilih :\n${DateFormat('EEE, dd MMMM yyyy').format(selectedDate ?? DateTime.now())}",
+                                        style: TextStyle(
+                                          color: isSwitch
+                                              ? const Color.fromARGB(
+                                                  255,
+                                                  196,
+                                                  110,
+                                                  176,
+                                                )
+                                              : const Color.fromARGB(
+                                                  255,
+                                                  243,
+                                                  232,
+                                                  240,
+                                                ),
+                                        ),
+                                      ),
+
+                                      Text(
+                                        "Pengingat dipilih :\n${selectedTime == null ? "" : selectedTime!.format(context)}",
+                                        style: TextStyle(
+                                          color: isSwitch
+                                              ? const Color.fromARGB(
+                                                  255,
+                                                  196,
+                                                  110,
+                                                  176,
+                                                )
+                                              : const Color.fromARGB(
+                                                  255,
+                                                  243,
+                                                  232,
+                                                  240,
+                                                ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Divider(),
 
                             ElevatedButton(
                               onPressed: () {
@@ -320,8 +373,7 @@ class _TugasDay15State extends State<TugasDay15> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          Tugas7snk(isSwitch: isSwitch),
+                                      builder: (context) => Loginkosong(),
                                     ),
                                   );
                                 } else {
