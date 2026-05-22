@@ -1,58 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:latihan_flutter_b6/latihan/tugas7_drawer.dart';
 import 'package:latihan_flutter_b6/latihan/tugas7_snk.dart';
 
 class TugasDay15 extends StatefulWidget {
-  const TugasDay15({super.key});
-
+  const TugasDay15({super.key, required this.isSwitch});
+  final bool isSwitch;
   @override
   State<TugasDay15> createState() => _TugasDay15State();
 }
 
 class _TugasDay15State extends State<TugasDay15> {
-  bool isSwitch = false;
+  late bool isSwitch;
   String? selectedDropdown;
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
   @override
+  void initState() {
+    super.initState();
+
+    isSwitch = widget.isSwitch;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Input Interaktif")),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(child: Text("Tes Header Drawer")),
-            ListTile(title: TosButton(drawer: "Term of Service")),
-            ListTile(title: FormButton(drawer: "Form")),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Switch(
-                  value: isSwitch,
-                  onChanged: (bool? value) {
-                    setState(() {});
-                    isSwitch = value ?? false;
-                  },
-                ),
-                SizedBox(width: 10),
-                Text(isSwitch ? "Dark mode" : "Light mode"),
-              ],
-            ),
-          ],
-        ),
+      appBar: AppBar(title: Text("New Event")),
+      drawer: Tugas7Drawer(
+        isSwitch: isSwitch,
+
+        onChanged: (value) {
+          setState(() {
+            isSwitch = value;
+          });
+        },
       ),
 
       body: Stack(
         children: [
           SizedBox.expand(
             child: isSwitch
-                ? Expanded(child: Container(color: Colors.black))
-                : Expanded(child: Container(color: Colors.white)),
+                ? Expanded(
+                    child: Container(
+                      color: const Color.fromARGB(255, 83, 43, 63),
+                    ),
+                  )
+                : Expanded(
+                    child: Container(
+                      color: const Color.fromARGB(255, 255, 161, 233),
+                    ),
+                  ),
           ),
           Column(
             children: [
               SizedBox(height: 40),
-              Text("New event", style: TextStyle(color: Colors.amber)),
+              Text(
+                "New event",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 248, 231, 241),
+
+                  fontSize: 40,
+                ),
+              ),
 
               Expanded(
                 child: Row(
@@ -64,19 +73,73 @@ class _TugasDay15State extends State<TugasDay15> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: isSwitch
-                              ? const Color.fromARGB(255, 13, 102, 57)
-                              : Colors.amberAccent,
+                              ? const Color.fromARGB(255, 53, 6, 35)
+                              : const Color.fromARGB(255, 248, 231, 241),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            TextField(),
+                            TextField(
+                              style: TextStyle(
+                                color: isSwitch
+                                    ? const Color.fromARGB(255, 243, 232, 240)
+                                    : const Color.fromARGB(255, 196, 110, 176),
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Write your event",
+                                hintStyle: TextStyle(
+                                  color: Color.fromARGB(149, 119, 119, 119),
+                                ),
+
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color.fromARGB(50, 156, 155, 155),
+                                    width: 1,
+                                  ),
+                                ),
+                              ),
+                            ),
                             Row(
                               children: [
-                                Text("Priority"),
+                                Text(
+                                  "Priority",
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? const Color.fromARGB(
+                                            255,
+                                            243,
+                                            232,
+                                            240,
+                                          )
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                  ),
+                                ),
                                 SizedBox(width: 40),
                                 DropdownButton<String>(
                                   value: selectedDropdown,
+                                  dropdownColor: isSwitch
+                                      ? Colors.black
+                                      : Colors.white,
+
+                                  iconEnabledColor: isSwitch
+                                      ? Colors.white
+                                      : Colors.black,
+
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? Colors.white
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                  ),
                                   items:
                                       [
                                         "Low priority",
@@ -93,12 +156,44 @@ class _TugasDay15State extends State<TugasDay15> {
                                     selectedDropdown = value;
                                   },
                                 ),
+                                SizedBox(width: 20),
+                                Text(
+                                  "Prioritas dipilih : \n${selectedDropdown ?? "-"}",
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? Colors.white
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                    fontSize: 16,
+                                  ),
+                                ),
                               ],
                             ),
 
                             Row(
                               children: [
-                                Text("Date"),
+                                Text(
+                                  "Date",
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? const Color.fromARGB(
+                                            255,
+                                            243,
+                                            232,
+                                            240,
+                                          )
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                  ),
+                                ),
                                 SizedBox(width: 40),
                                 ElevatedButton.icon(
                                   onPressed: () async {
@@ -115,20 +210,60 @@ class _TugasDay15State extends State<TugasDay15> {
                                       });
                                     }
                                   },
-                                  label: Text("Pilih Tanggal"),
+                                  label: Text(
+                                    "Pilih Tanggal",
+                                    style: TextStyle(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        196,
+                                        110,
+                                        176,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 SizedBox(width: 40),
                                 Text(
-                                  DateFormat(
-                                    'EEE, dd MMMM yyyy',
-                                  ).format(selectedDate ?? DateTime.now()),
+                                  "Tanggal dipilih :\n${DateFormat('EEE, dd MMMM yyyy').format(selectedDate ?? DateTime.now())}",
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? const Color.fromARGB(
+                                            255,
+                                            243,
+                                            232,
+                                            240,
+                                          )
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                  ),
                                 ),
                               ],
                             ),
 
                             Row(
                               children: [
-                                Text("Time"),
+                                Text(
+                                  "Time",
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? const Color.fromARGB(
+                                            255,
+                                            243,
+                                            232,
+                                            240,
+                                          )
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                  ),
+                                ),
                                 SizedBox(width: 40),
                                 ElevatedButton.icon(
                                   onPressed: () async {
@@ -143,13 +278,36 @@ class _TugasDay15State extends State<TugasDay15> {
                                       });
                                     }
                                   },
-                                  label: Text("Pilih Jam"),
+                                  label: Text(
+                                    "Pilih Jam",
+                                    style: TextStyle(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        196,
+                                        110,
+                                        176,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 SizedBox(width: 40),
                                 Text(
-                                  selectedTime == null
-                                      ? ""
-                                      : selectedTime!.format(context),
+                                  "Pengingat dipilih :\n${selectedTime == null ? "" : selectedTime!.format(context)}",
+                                  style: TextStyle(
+                                    color: isSwitch
+                                        ? const Color.fromARGB(
+                                            255,
+                                            243,
+                                            232,
+                                            240,
+                                          )
+                                        : const Color.fromARGB(
+                                            255,
+                                            196,
+                                            110,
+                                            176,
+                                          ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -162,7 +320,8 @@ class _TugasDay15State extends State<TugasDay15> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Tugas7snk(),
+                                      builder: (context) =>
+                                          Tugas7snk(isSwitch: isSwitch),
                                     ),
                                   );
                                 } else {
@@ -175,7 +334,17 @@ class _TugasDay15State extends State<TugasDay15> {
                                   );
                                 }
                               },
-                              child: Text("Submit"),
+                              child: Text(
+                                "Submit",
+                                style: TextStyle(
+                                  color: const Color.fromARGB(
+                                    255,
+                                    196,
+                                    110,
+                                    176,
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -187,56 +356,6 @@ class _TugasDay15State extends State<TugasDay15> {
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class TosButton extends StatelessWidget {
-  const TosButton({super.key, required this.drawer});
-  final String drawer;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Tugas7snk()),
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Text(
-          drawer,
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Color.fromARGB(255, 194, 19, 19)),
-        ),
-      ),
-    );
-  }
-}
-
-class FormButton extends StatelessWidget {
-  const FormButton({super.key, required this.drawer});
-  final String drawer;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => TugasDay15()),
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Text(
-          drawer,
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Color.fromARGB(255, 161, 29, 29)),
-        ),
       ),
     );
   }
