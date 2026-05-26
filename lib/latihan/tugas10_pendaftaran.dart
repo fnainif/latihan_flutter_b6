@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter_b6/latihan/reusable_login.dart';
+import 'package:latihan_flutter_b6/latihan/tugas10_typage.dart';
 
 class Tugas10Pendaftaran extends StatefulWidget {
   const Tugas10Pendaftaran({super.key});
@@ -73,6 +74,9 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                           padding: const EdgeInsets.all(10.0),
                           child: TextFormField(
                             controller: nameController,
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 217, 217, 217),
+                            ),
                             decoration: InputDecoration(
                               hintText: "Masukan Nama",
                               labelText: "Nama",
@@ -91,6 +95,9 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                           padding: const EdgeInsets.all(10.0),
                           child: TextFormField(
                             controller: emailController,
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 217, 217, 217),
+                            ),
                             decoration: InputDecoration(
                               hintText: "Masukan Email",
                               labelText: "Email",
@@ -112,6 +119,9 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                           padding: const EdgeInsets.all(10.0),
                           child: TextFormField(
                             controller: nohpController,
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 217, 217, 217),
+                            ),
                             decoration: InputDecoration(
                               hintText: "Masukan No yang bisa dihubungi",
                               labelText: "No. HP",
@@ -124,6 +134,9 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                           padding: const EdgeInsets.all(10.0),
                           child: TextFormField(
                             controller: addressController,
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 217, 217, 217),
+                            ),
                             decoration: InputDecoration(
                               hintText: "Masukan Alamat",
                               labelText: "Alamat",
@@ -142,6 +155,9 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                           padding: const EdgeInsets.all(10.0),
                           child: TextFormField(
                             controller: instansiController,
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 217, 217, 217),
+                            ),
                             decoration: InputDecoration(
                               hintText: "Nama Instansi",
                               labelText: "Instansi",
@@ -170,11 +186,89 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                   //   },
                   //   child: Text("Login"),
                   // ),
-                  LoginButton(
-                    sosmed: "Daftar",
-                    warnaBox: Color(0xFF062592),
-                    loginSize: 15,
+                  SizedBox(height: 30),
+                  // LoginButton(
+                  //   sosmed: "Daftar",
+                  //   warnaBox: Color(0xFF062592),
+                  //   loginSize: 15,
+                  // ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF062592),
+                      foregroundColor: Color.fromARGB(255, 217, 217, 217),
+                      minimumSize: Size(double.infinity, 60),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 15,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              contentPadding: EdgeInsets.all(20),
+                              title: Text("Konfirmasi Data"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                  Text("Nama : ${nameController.text}"),
+                                  Text("Email : ${emailController.text}"),
+                                  Text("No. HP : ${nohpController.text}"),
+                                  Text("Alamat: ${addressController.text}"),
+                                  Text("Instansi : ${instansiController.text}"),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+
+                                  child: Text("Batal"),
+                                ),
+
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            Tugas10HalamanTerimaKasih(
+                                              nama: nameController.text,
+                                              namainstansi:
+                                                  instansiController.text,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Text("Lanjut"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => Tugas10HalamanTerimaKasih(
+                        //       nama: nameController.text,
+                        //       namainstansi: instansiController.text,
+                        //     ),
+                        //   ),
+                        // );
+                      }
+                    },
+                    child: Text("Daftar"),
                   ),
+
                   SizedBox(height: 30),
 
                   Padding(

@@ -17,6 +17,7 @@ class Tugas10HalamanTerimaKasih extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Terima kasih, $nama dari $namainstansi telah mendaftar"),
+            SizedBox(height: 40),
 
             ElevatedButton(
               onPressed: () {
