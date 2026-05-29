@@ -25,6 +25,14 @@ class _Tugas7snkState extends State<Tugas7snk> {
   void _prosesLogout() async {
     await PreferenceHandler.logOut();
 
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Berhasil logout"),
+        backgroundColor: Colors.red,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+
     if (!mounted) return;
     Navigator.pushReplacement(
       context,
