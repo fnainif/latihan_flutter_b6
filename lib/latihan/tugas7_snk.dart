@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter_b6/latihan/day15mainpage.dart';
+import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
+import 'package:latihan_flutter_b6/latihan/tugas10_pendaftaran.dart';
 import 'package:latihan_flutter_b6/latihan/tugas7_drawer.dart';
 
 class Tugas7snk extends StatefulWidget {
@@ -20,10 +22,25 @@ class _Tugas7snkState extends State<Tugas7snk> {
     isSwitch = widget.isSwitch;
   }
 
+  void _prosesLogout() async {
+    await PreferenceHandler.logOut();
+
+    if (!mounted) return;
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => Tugas10Pendaftaran()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Term of Service")),
+      appBar: AppBar(
+        title: Text("Term of Service"),
+        actions: [
+          IconButton(onPressed: _prosesLogout, icon: Icon(Icons.logout)),
+        ],
+      ),
       drawer: Tugas7Drawer(
         isSwitch: isSwitch,
 

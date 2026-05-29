@@ -21,6 +21,16 @@ class _MainPageDay15State extends State<MainPageDay15> {
   late int selectedIndex;
   late bool isSwitch;
 
+  // void _prosesLogout() async {
+  //   await PreferenceHandler.logOut();
+
+  //   if (!mounted) return;
+  //   Navigator.pushReplacement(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => Tugas10Pendaftaran()),
+  //   );
+  // }
+
   @override
   void initState() {
     super.initState();
@@ -37,6 +47,13 @@ class _MainPageDay15State extends State<MainPageDay15> {
       Loginkosong(),
     ];
     return Scaffold(
+      // appBar: AppBar(
+      //   title: Text("Home"),
+
+      //   actions: [
+      //     IconButton(onPressed: _prosesLogout, icon: Icon(Icons.logout)),
+      //   ],
+      // ),
       body: pages[selectedIndex],
 
       bottomNavigationBar: BotNavBar(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_flutter_b6/latihan/day15mainpage.dart';
+import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
 import 'package:latihan_flutter_b6/latihan/reusable_login.dart';
-import 'package:latihan_flutter_b6/latihan/tugas10_typage.dart';
 
 class Tugas10Pendaftaran extends StatefulWidget {
   const Tugas10Pendaftaran({super.key});
@@ -235,16 +236,13 @@ class _Tugas10PendaftaranState extends State<Tugas10Pendaftaran> {
                                 ),
 
                                 ElevatedButton(
-                                  onPressed: () {
+                                  onPressed: () async {
+                                    await PreferenceHandler.setLogin(true);
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            Tugas10HalamanTerimaKasih(
-                                              nama: nameController.text,
-                                              namainstansi:
-                                                  instansiController.text,
-                                            ),
+                                            MainPageDay15(isSwitch: false),
                                       ),
                                     );
                                   },

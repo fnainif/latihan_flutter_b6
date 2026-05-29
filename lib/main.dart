@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_home.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
+import 'package:latihan_flutter_b6/latihan/day19/views/splash_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('id_ID', null);
+  await PreferenceHandler.init();
   runApp(const MyApp());
 }
 
@@ -12,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -33,7 +39,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 220, 169, 235),
         ),
       ),
-      home: const TugasDay15(),
+      home: const SplashScreenDay19(),
     );
   }
 }
