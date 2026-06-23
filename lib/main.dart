@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
-import 'package:latihan_flutter_b6/latihan/day19/views/splash_screen.dart';
+import 'package:latihan_flutter_b6/latihan/day33/tugas14/views/get_grid_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 220, 169, 235),
         ),
       ),
-      home: const SplashScreenDay19(),
+      home: const ApiGrid(),
     );
   }
 }

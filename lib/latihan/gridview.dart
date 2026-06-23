@@ -95,6 +95,28 @@ class GridviewDay10 extends StatelessWidget {
               ),
             ),
 
+            SizedBox(height: 20),
+            Container(
+              alignment: Alignment.center,
+              height: 40,
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 161, 85, 138),
+                ),
+              ),
+              child: Text(
+                "Submit",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 161, 85, 138),
+                  fontFamily: "Super",
+                  fontSize: 20,
+                ),
+              ),
+            ),
+
             SizedBox(height: 40),
 
             Text(
