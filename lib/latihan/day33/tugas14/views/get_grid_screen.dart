@@ -82,31 +82,7 @@ class _ApiGridState extends State<ApiGrid> {
                   margin: const EdgeInsets.symmetric(
                     horizontal: 12,
                     vertical: 6,
-                  ), // EdgeInsets.symmetric
-                  // child: ListTile(
-                  //   leading: CircleAvatar(
-                  //     backgroundColor: Colors.blue,
-                  //     child: Text(
-                  //       post.id,
-                  //       style: const TextStyle(
-                  //         color: Colors.white,
-                  //         fontSize: 12,
-                  //       ), // TextStyle
-                  //     ), // Text
-                  //   ), // CircleAvatar
-                  //   title: Text(
-                  //     post.title ?? "",
-                  //     maxLines: 1,
-                  //     overflow: TextOverflow.ellipsis,
-                  //     style: const TextStyle(fontWeight: FontWeight.w600),
-                  //   ), // Text
-                  //   subtitle: Text(
-                  //     post.body ?? "",
-                  //     maxLines: 2,
-                  //     overflow: TextOverflow.ellipsis,
-                  //   ), // Text
-                  //   trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                  // ),
+                  ),
                   child: Image.network(post.thumbs.original),
                 );
               },

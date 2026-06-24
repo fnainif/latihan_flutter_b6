@@ -4,10 +4,10 @@ import 'package:retrofit/retrofit.dart';
 
 part 'api_services.g.dart';
 
-@RestApi(baseUrl: 'https://wallhaven.cc/api/v1/search')
+@RestApi(baseUrl: 'https://wallhaven.cc/api/v1')
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  @GET('/posts')
+  @GET('/search')
   Future<WallpaperModels> getAllPosts();
 }

@@ -12,7 +12,7 @@ part of 'api_services.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://wallhaven.cc/api/v1/search';
+    baseUrl ??= 'https://wallhaven.cc/api/v1';
   }
 
   final Dio _dio;
@@ -31,7 +31,7 @@ class _ApiService implements ApiService {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/posts',
+            '/search',
             queryParameters: queryParameters,
             data: _data,
           )
