@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
-import 'package:latihan_flutter_b6/latihan/day33/tugas14/views/get_grid_screen.dart';
+import 'package:latihan_flutter_b6/latihan/day33/tugas14/views/grid_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,11 +35,9 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(
-          seedColor: const Color.fromARGB(255, 220, 169, 235),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF9999EC)),
       ),
-      home: const ApiGrid(),
+      home: const ApiGridScreen(),
     );
   }
 }
