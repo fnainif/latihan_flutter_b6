@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/day15mainpage.dart';
 import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
-import 'package:latihan_flutter_b6/latihan/reusable_login.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/day15mainpage.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/reusable_login.dart';
 
 class Tugas10Pendaftaran extends StatefulWidget {
   const Tugas10Pendaftaran({super.key});

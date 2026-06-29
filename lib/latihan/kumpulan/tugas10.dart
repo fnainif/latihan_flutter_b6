@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/tugas10_typage.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas10_typage.dart';
 
 class Tugas10Wrong extends StatefulWidget {
   const Tugas10Wrong({super.key});

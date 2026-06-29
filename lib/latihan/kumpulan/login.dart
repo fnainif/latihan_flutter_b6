@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/reusable_login.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/reusable_login.dart';
 
 class LoginDay13 extends StatefulWidget {
   const LoginDay13({super.key});

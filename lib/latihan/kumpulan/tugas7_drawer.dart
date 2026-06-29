@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_home.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_snk.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas7_home.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas7_snk.dart';
 
 class Tugas7Drawer extends StatelessWidget {
   const Tugas7Drawer({

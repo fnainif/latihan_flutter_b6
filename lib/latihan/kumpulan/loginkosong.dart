@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/reusable_login.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/reusable_login.dart';
 
 class Loginkosong extends StatelessWidget {
   const Loginkosong({super.key});

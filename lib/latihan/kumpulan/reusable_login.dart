@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/loginkosong.dart';
-import 'package:latihan_flutter_b6/latihan/sosmedkosong.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/loginkosong.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/sosmedkosong.dart';
 
 class InputField extends StatelessWidget {
   const InputField({super.key, required this.hint, required this.icon});

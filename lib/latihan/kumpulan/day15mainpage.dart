@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/loginkosong.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_home.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_snk.dart';
-import 'package:latihan_flutter_b6/latihan/tugas8.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/loginkosong.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas7_home.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas7_snk.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas8.dart';
 
 class MainPageDay15 extends StatefulWidget {
   const MainPageDay15({

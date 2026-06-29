@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:latihan_flutter_b6/latihan/loginkosong.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_drawer.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/loginkosong.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas7_drawer.dart';
 
 class TugasDay15 extends StatefulWidget {
   const TugasDay15({super.key, required this.isSwitch});

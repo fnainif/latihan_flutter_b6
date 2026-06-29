@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/day15mainpage.dart';
 import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
-import 'package:latihan_flutter_b6/latihan/tugas10_pendaftaran.dart';
-import 'package:latihan_flutter_b6/latihan/tugas7_drawer.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/day15mainpage.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas10_pendaftaran.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas7_drawer.dart';
 
 class Tugas7snk extends StatefulWidget {
   const Tugas7snk({super.key, required this.isSwitch});
