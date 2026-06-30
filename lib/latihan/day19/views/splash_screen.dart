@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter_b6/latihan/day15mainpage.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/day15mainpage.dart';
 import 'package:latihan_flutter_b6/latihan/day19/database/preference_handler.dart';
-import 'package:latihan_flutter_b6/latihan/tugas10_pendaftaran.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/tugas10_pendaftaran.dart';
 
 class SplashScreenDay19 extends StatefulWidget {
   const SplashScreenDay19({super.key});

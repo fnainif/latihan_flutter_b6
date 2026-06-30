@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:latihan_flutter_b6/latihan/day20/database/db_helper.dart';
 import 'package:latihan_flutter_b6/latihan/day20/views/homescreen.dart';
 import 'package:latihan_flutter_b6/latihan/day20/views/register_screen.dart';
-import 'package:latihan_flutter_b6/latihan/reusable_login.dart';
+import 'package:latihan_flutter_b6/latihan/kumpulan/reusable_login.dart';
 
 class LoginDay20 extends StatefulWidget {
   const LoginDay20({super.key});
